@@ -1,0 +1,19 @@
+{
+  "name": "cordova-react-starterkit",
+  "version": "0.0.1",
+  "description": "Cordova App Starter Kit with React and Redux",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drudv/cordova-react-starterkit.git"
+  },
+  "author": "Dmitry Druganov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drudv/cordova-react-starterkit/issues"
+  },
+  "homepage": "https://github.com/drudv/cordova-react-starterkit#readme"
+}
