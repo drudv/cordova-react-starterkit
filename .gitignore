@@ -1,2 +1,21 @@
+npm-debug.log
 node_modules
 www/bundle
+
+# Mac
+.DS_Store
+
+# Android
+platforms/android/assets/www
+platforms/android/bin/
+platforms/android/gen/
+platforms/android/res/xml/config.xml
+
+# iOS
+platforms/ios/build/
+platforms/ios/www/
+platforms/ios/cordova/console.log
+*.xcuserdatad
+
+# res
+resources/signing
