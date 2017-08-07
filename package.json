@@ -4,7 +4,7 @@
   "description": "Cordova App Starter Kit with React and Redux",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test NODE_PATH=. mocha --compilers js:babel-core/register --require test/setup --recursive",
     "start": "webpack-dev-server --content-base www/",
     "build": "webpack",
     "build:watch": "npm run build -- --watch"
@@ -24,11 +24,16 @@
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-1": "^6.24.1",
+    "chai": "^4.1.1",
+    "cross-env": "^5.0.4",
     "eslint": "^4.4.0",
     "eslint-plugin-react": "^7.1.0",
+    "jsdom": "^11.1.0",
+    "mocha": "^3.5.0",
     "webpack": "^3.4.1"
   },
   "dependencies": {
