@@ -1,12 +1,14 @@
-var config = {
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const config = {
   context: __dirname + '/lib',
   entry: {
     app: './index.js',
   },
   output: {
     path: __dirname + '/www/bundle',
-    filename: 'bundle.js',
-    publicPath: "/bundle",
+    filename: '[name].js',
+    publicPath: '',
   },
   module: {
     rules: [
@@ -15,12 +17,15 @@ var config = {
         loader: 'babel-loader',
       },
       {
-        test: /\.(sass|scss)$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ]
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file-loader'
       },
       {
         test: /\.json$/,
@@ -28,6 +33,10 @@ var config = {
       }
     ]
   },
+
+  plugins: [
+    new ExtractTextPlugin('[name].css'),
+  ],
 
   devServer: {
     contentBase: __dirname + '/www',
