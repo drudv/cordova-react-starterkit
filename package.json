@@ -41,13 +41,14 @@
     "webpack": "^3.4.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "cordova-android": "^6.2.3",
     "cordova-plugin-whitelist": "^1.3.2",
-    "onsenui": "^2.5.3",
+    "onsenui": "^2.6.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-onsenui": "^1.5.0",
+    "react-onsenui": "^1.7.0",
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
