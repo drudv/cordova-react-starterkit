@@ -1,0 +1,6 @@
+/**
+ * Overrides of styles in 'onsenui/css-components-src/src/theme.css';
+ */
+:root {
+  --text-color: #ccc;
+}
