@@ -3,12 +3,13 @@ module.exports = {
     'postcss-import': {},
     'postcss-url': {
       url: (asset, dir, options) => {
-        // temporary workaround to load onsenui/css-components-src resources
-        const indexOfOnsenCSSComponents = asset.absolutePath.indexOf('onsenui/css-components-src');
-        if (indexOfOnsenCSSComponents !== -1) {
-          return '~' + asset.absolutePath.substr(indexOfOnsenCSSComponents);
+        // temporary workaround to load onsenui assets
+        const pattern = 'node_modules/onsenui/';
+        const index = asset.absolutePath.indexOf(pattern);
+        if (index !== -1) {
+          return '~onsenui/' + asset.absolutePath.substr(index + pattern.length);
         }
-        return asset;
+        return asset.url;
       },
     },
     'postcss-cssnext': {
