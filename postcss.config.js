@@ -4,10 +4,8 @@ module.exports = {
     'postcss-url': {
       url: (asset, dir, options) => {
         // temporary workaround to load onsenui assets
-        const pattern = 'node_modules/onsenui/';
-        const index = asset.absolutePath.indexOf(pattern);
-        if (index !== -1) {
-          return '~onsenui/' + asset.absolutePath.substr(index + pattern.length);
+        if (asset.absolutePath.indexOf('node_modules/onsenui/')) {
+          return asset.absolutePath;
         }
         return asset.url;
       },
