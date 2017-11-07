@@ -1,15 +1,7 @@
 module.exports = {
   plugins: {
     'postcss-import': {},
-    'postcss-url': {
-      url: (asset, dir, options) => {
-        // temporary workaround to load onsenui assets
-        if (asset.absolutePath.indexOf('node_modules/onsenui/')) {
-          return asset.absolutePath;
-        }
-        return asset.url;
-      },
-    },
+    'postcss-url': { url: 'rebase' },
     'postcss-cssnext': {
       browsers: [ // enable CSS properties which require prefixes
         '> 1%', 'Firefox ESR', 'Opera 12.1',
